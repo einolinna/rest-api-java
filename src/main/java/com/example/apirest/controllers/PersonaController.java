@@ -16,9 +16,10 @@ import com.example.apirest.entities.Persona;
 import com.example.apirest.services.PersonaService;
 
 @RestController
-@CrossOrigin(origins="*")
-@RequestMapping(path="api/v1/personas")
+@CrossOrigin(origins = "*")
+@RequestMapping(path = "api/v1/personas")
 public class PersonaController {
+	
 	private PersonaService personaService;
 	
 	public PersonaController(PersonaService personaService) {
@@ -32,7 +33,7 @@ public class PersonaController {
 		
 		try {
 			
-			return ResponseEntity.status(HttpStatus.OK).body(personaService.findAll());
+			return ResponseEntity.ok().body(personaService.findAll());
 			
 		} catch (Exception e) {
 			
